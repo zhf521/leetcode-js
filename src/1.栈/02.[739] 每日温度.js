@@ -26,21 +26,19 @@
 
  */
 
-// * 思路：单调栈，单调栈用途不太广泛，只处理一类典型的问题，比如「下一个更大元素」，「上一个更小元素」等
+// * 思路：单调栈，单调栈用途不太广泛，只处理一类典型的问题，比如「下一个更大元素」，「上一个更小元素」等。首先我们如果求的是下一个更大的元素，那么，我们将维护一个单调递增的栈，栈里面存放的是遍历过的数据的下标，我们依次比较栈顶元素和temperatures数组里的元素，如果数组里的元素大于栈顶元素，则栈顶元素出栈，我们将栈顶元素的下标减去当前元素的下标，把结果存放到结果数组中即可，如果小于等于，则入栈
 
 /**
  * @param {number[]} temperatures
  * @return {number[]}
  */
 var dailyTemperatures = function (temperatures) {
-  let stack = []
-  //初始化气温列表，默认值为0
   let res = new Array(temperatures.length).fill(0)
+  let stack = []
   for (let i = 0; i < temperatures.length; i++) {
-    //将栈顶元素下标对应的值和当前元素进行比较
     while (
-      temperatures[i] > temperatures[stack[stack.length - 1]] &&
-      stack.length
+      stack.length &&
+      temperatures[i] > temperatures[stack[stack.length - 1]]
     ) {
       let idx = stack.pop()
       res[idx] = i - idx
@@ -51,7 +49,7 @@ var dailyTemperatures = function (temperatures) {
 }
 
 // 测试用例
-let test = [73, 74, 75, 71, 69, 72, 76, 73]
+let test = [30, 60, 90]
 
 console.time('执行用时')
 console.log(dailyTemperatures(test))
