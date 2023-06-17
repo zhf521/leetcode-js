@@ -1,6 +1,6 @@
-/**
- * * 题目名称：股票价格跨度
- * * 题目地址：https://leetcode.cn/problems/online-stock-span/
+/*
+题目名称：股票价格跨度
+题目地址：https://leetcode.cn/problems/online-stock-span/
  
 设计一个算法收集某些股票的每日报价，并返回该股票当日价格的 跨度 。
 
@@ -37,9 +37,9 @@ stockSpanner.next(85);  // 返回 6
 1 <= price <= 105
 最多调用 next 方法 104 次
 
- */
+*/
 
-// * 思路：使用单调栈解决
+// 思路：使用单调栈解决
 
 var StockSpanner = function () {
   this.stack = []

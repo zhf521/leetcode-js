@@ -1,6 +1,6 @@
 /**
- * * 题目名称：子数组的最小值之和
- * * 题目地址：https://leetcode.cn/problems/sum-of-subarray-minimums/
+题目名称：子数组的最小值之和
+题目地址：https://leetcode.cn/problems/sum-of-subarray-minimums/
  
 给定一个整数数组 arr，找到 min(b) 的总和，其中 b 的范围为 arr 的每个（连续）子数组。
 
@@ -26,9 +26,9 @@
 1 <= arr.length <= 3 * 104
 1 <= arr[i] <= 3 * 104
 
- */
+*/
 
-// * 思路：单调栈，维护一个单调栈，两个数组来接受遍历的数组的左侧和右侧第一个比它小的元素
+// 思路：单调栈，维护一个单调栈，两个数组来接受遍历的数组的左侧和右侧第一个比它小的元素
 
 /**
  * @param {number[]} arr
